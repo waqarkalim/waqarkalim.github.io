@@ -10,7 +10,7 @@ interface CardProps {
 
 const Card = ({ date, readTime, websiteUrl, title, subtitle }: CardProps) => (
   <section className="flex flex-col gap-2">
-    <p className="text-sm uppercase text-gray-500">{`${date} (${readTime})`}</p>
+    <p className="text-sm text-gray-500 uppercase">{`${date} (${readTime})`}</p>
     <a href={websiteUrl}>{title}</a>
     <p className="text-gray-400">{subtitle}</p>
   </section>

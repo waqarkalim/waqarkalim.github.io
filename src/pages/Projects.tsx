@@ -22,7 +22,7 @@ const Card = ({
   tags,
 }: CardProps) => (
   <section id={id} className="flex flex-col gap-2">
-    <p className="text-sm uppercase text-gray-500">
+    <p className="text-sm text-gray-500 uppercase">
       {`${date} (${eventName})`}
     </p>
     <a href={websiteUrl}>
@@ -32,7 +32,7 @@ const Card = ({
     <p className="text-gray-400">{description}</p>
     <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
       {tags.map((tag) => (
-        <span className="rounded-full bg-gray-800 p-1 px-3 text-sm font-light">
+        <span className="p-1 px-3 text-sm font-light bg-gray-800 rounded-full">
           {tag}
         </span>
       ))}
