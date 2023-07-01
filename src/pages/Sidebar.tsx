@@ -12,13 +12,16 @@ const Sidebar = () => {
         </p>
       </div>
       <div className="flex gap-4">
-        <a href="https://github.com/waqarkalim">
+        <a href="https://github.com/waqarkalim" aria-label="github">
           <i className="fa-brands fa-github fa-xl"></i>
         </a>
-        <a href="https://www.linkedin.com/in/waqar-kalim/">
+        <a
+          href="https://www.linkedin.com/in/waqar-kalim/"
+          aria-label="linked in"
+        >
           <i className="fa-brands fa-linkedin fa-xl"></i>
         </a>
-        <a href="https://twitter.com/waqar_kalim">
+        <a href="https://twitter.com/waqar_kalim" aria-label="twitter">
           <i className="fa-brands fa-twitter fa-xl"></i>
         </a>
       </div>
