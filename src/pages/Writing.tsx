@@ -1,3 +1,5 @@
+import './styles.scss'
+
 interface CardProps {
   date: string
   readTime: string
@@ -8,7 +10,7 @@ interface CardProps {
 
 const Card = ({ date, readTime, websiteUrl, title, subtitle }: CardProps) => (
   <section className="flex flex-col gap-2">
-    <p className="text-sm uppercase text-gray-500">{`${date} (${readTime})`}</p>
+    <p className="text-sm text-gray-500 uppercase">{`${date} (${readTime})`}</p>
     <a href={websiteUrl}>{title}</a>
     <p className="text-gray-400">{subtitle}</p>
   </section>
@@ -16,7 +18,7 @@ const Card = ({ date, readTime, websiteUrl, title, subtitle }: CardProps) => (
 
 const Writing = () => (
   <section id="writing" className="flex flex-col gap-4">
-    <h2 className="text-2xl font-bold">Writing</h2>
+    <h2 className="section__heading">Writing</h2>
     <div className="flex flex-col gap-12">
       <Card
         date="March 2022"

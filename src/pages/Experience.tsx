@@ -1,3 +1,5 @@
+import './styles.scss'
+
 interface CardProps {
   id: string
   range: string
@@ -15,14 +17,14 @@ const Card = ({
   description,
   tags,
 }: CardProps) => (
-  <section id={id} className="flex flex-col gap-2">
-    <p className="text-sm uppercase text-gray-500">{range}</p>
-    <div className="flex flex-col gap-2">
+  <section id={id} className="flex flex-col gap-2 sm:flex-row">
+    <p className="flex-grow text-sm text-gray-500 uppercase">{range}</p>
+    <div className="flex flex-col gap-2 sm:w-3/4">
       <a href={websiteUrl}>{position}</a>
       <p className="text-gray-400">{description}</p>
       <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
         {tags.map((tag) => (
-          <span className="rounded-full bg-gray-800 p-1 px-3 text-sm font-light">
+          <span className="p-1 px-3 text-sm font-light bg-gray-800 rounded-full">
             {tag}
           </span>
         ))}
@@ -39,7 +41,7 @@ const ViewResumeAnchorLink = () => (
 
 const Experience = () => (
   <section id="experience" className="flex flex-col gap-4">
-    <h2 className="text-2xl font-bold">Experience</h2>
+    <h2 className="section__heading">Experience</h2>
     <div className="flex flex-col gap-12">
       <Card
         id="carfax"

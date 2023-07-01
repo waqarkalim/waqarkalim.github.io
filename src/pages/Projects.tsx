@@ -1,3 +1,5 @@
+import './styles.scss'
+
 interface CardProps {
   id: string
   date: string
@@ -19,21 +21,23 @@ const Card = ({
   description,
   tags,
 }: CardProps) => (
-  <section id={id} className="flex flex-col gap-2">
-    <p className="text-sm uppercase text-gray-500">
-      {`${date} (${eventName})`}
-    </p>
-    <a href={websiteUrl}>
-      {projectName}
-      {winner ? <span>🥇</span> : ''}
-    </a>
-    <p className="text-gray-400">{description}</p>
-    <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
-      {tags.map((tag) => (
-        <span className="rounded-full bg-gray-800 p-1 px-3 text-sm font-light">
-          {tag}
-        </span>
-      ))}
+  <section id={id} className="flex flex-col gap-2 sm:flex-row">
+    <div className="flex flex-row flex-grow gap-1 text-sm text-gray-500 uppercase sm:flex-col">
+      <p>{date}</p> <p className="sm:hidden">{`(${eventName})`}</p>
+    </div>
+    <div className="flex flex-col gap-2 sm:w-3/4">
+      <a href={websiteUrl}>
+        {projectName}
+        {winner ? <span>🥇</span> : ''}
+      </a>
+      <p className="text-gray-400">{description}</p>
+      <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
+        {tags.map((tag) => (
+          <span className="p-1 px-3 text-sm font-light bg-gray-800 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
     </div>
   </section>
 )
@@ -46,7 +50,7 @@ const ViewProjectsAnchorLink = () => (
 
 const Projects = () => (
   <section id="projects" className="flex flex-col gap-4">
-    <h2 className="text-2xl font-bold">Projects</h2>
+    <h2 className="section__heading">Projects</h2>
     <div className="flex flex-col gap-12">
       <Card
         id="merge-countflicts"

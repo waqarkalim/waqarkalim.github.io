@@ -1,9 +1,11 @@
+import './styles.scss'
+
 const Education = () => {
   return (
     <section id="education" className="flex flex-col gap-4">
-      <h2 className="text-2xl font-bold">Education</h2>
+      <h2 className="section__heading">Education</h2>
       <section id="bachelors" className="flex flex-col gap-2">
-        <p className="text-sm uppercase text-gray-500">2016 - 2021</p>
+        <p className="text-sm text-gray-500 uppercase">2016 - 2021</p>
         <a href="https://www.uwo.ca/">
           Western University | Bachelor of Science
         </a>
