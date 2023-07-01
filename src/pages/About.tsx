@@ -1,7 +1,9 @@
+import './styles.scss'
+
 const About = () => {
   return (
     <section id="about" className="flex flex-col gap-4">
-      <h2 className="text-md font-bold uppercase">About</h2>
+      <h2 className="section__heading">About</h2>
       <p className="leading-7 text-gray-400">
         I'm a passionate{' '}
         <strong className="text-gray-300">software developer</strong> who

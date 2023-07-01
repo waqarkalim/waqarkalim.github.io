@@ -1,3 +1,5 @@
+import './styles.scss'
+
 interface CardProps {
   date: string
   websiteUrl: string
@@ -15,7 +17,7 @@ const Card = ({ date, websiteUrl, title }: CardProps) => (
 
 const Research = () => (
   <section id="research" className="flex flex-col gap-4">
-    <h2 className="text-2xl font-bold">Research</h2>
+    <h2 className="section__heading">Research</h2>
     <div className="flex flex-col gap-12">
       <Card
         date="October 2022"

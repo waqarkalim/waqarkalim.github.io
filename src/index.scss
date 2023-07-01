@@ -4,7 +4,8 @@
 
 body,
 html {
-  @apply m-0 p-0 h-screen bg-slate-900 text-indigo-100;
+  // @apply m-0 p-0 h-screen text-indigo-100 bg-slate-900;
+  @apply m-0 p-0 h-screen text-indigo-100 bg-gradient-to-r from-slate-950 to-slate-900;
 
   font-family: 'Inter';
 }

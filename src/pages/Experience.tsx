@@ -1,3 +1,5 @@
+import './styles.scss'
+
 interface CardProps {
   id: string
   range: string
@@ -39,7 +41,7 @@ const ViewResumeAnchorLink = () => (
 
 const Experience = () => (
   <section id="experience" className="flex flex-col gap-4">
-    <h2 className="text-2xl font-bold">Experience</h2>
+    <h2 className="section__heading">Experience</h2>
     <div className="flex flex-col gap-12">
       <Card
         id="carfax"
