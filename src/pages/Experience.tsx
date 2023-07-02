@@ -24,8 +24,8 @@ const Card = ({
       <a href={websiteUrl}>{position}</a>
       <p className="description__text">{description}</p>
       <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
-        {tags.map((tag) => (
-          <Tag text={tag} />
+        {tags.map((tag, index) => (
+          <Tag key={`${tag}-${index}`} text={tag} />
         ))}
       </div>
     </div>

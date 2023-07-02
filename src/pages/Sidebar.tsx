@@ -1,4 +1,9 @@
+import GithubIcon from './icons/Github'
+import LinkedInIcon from './icons/LinkedIn'
+import TwitterIcon from './icons/Twitter'
+
 const Sidebar = () => {
+  const size = '1.5rem'
   return (
     <section
       id="sidebar"
@@ -37,16 +42,20 @@ const Sidebar = () => {
       </div>
       <div className="flex gap-4">
         <a href="https://github.com/waqarkalim" aria-label="github">
-          <i className="fa-brands fa-github fa-xl"></i>
+          {/* <i className="fa-brands fa-github fa-xl"></i> */}
+          {/* <GithubIcon aria-label="github" /> */}
+          <GithubIcon width={size} height={size} />
         </a>
         <a
           href="https://www.linkedin.com/in/waqar-kalim/"
           aria-label="linked in"
         >
-          <i className="fa-brands fa-linkedin fa-xl"></i>
+          {/* <i className="fa-brands fa-linkedin fa-xl"></i> */}
+          <LinkedInIcon width={size} height={size} />
         </a>
         <a href="https://twitter.com/waqar_kalim" aria-label="twitter">
-          <i className="fa-brands fa-twitter fa-xl"></i>
+          {/* <i className="fa-brands fa-twitter fa-xl"></i> */}
+          <TwitterIcon width={size} height={size} />
         </a>
       </div>
     </section>
