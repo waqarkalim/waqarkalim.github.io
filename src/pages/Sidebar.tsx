@@ -7,7 +7,7 @@ const Sidebar = () => {
   return (
     <section
       id="sidebar"
-      className="flex flex-col justify-center flex-grow gap-8 px-6 py-12 flex-start sm:px-12 sm:py-20 lg:w-1/2 lg:max-h-screen lg:justify-between lg:px-0 lg:py-24 lg:pl-24 lg:sticky lg:top-0"
+      className="flex flex-col justify-center flex-grow gap-8 px-6 py-12 flex-start sm:px-12 sm:py-20 lg:w-1/2 lg:max-h-screen lg:justify-between lg:px-0 lg:py-24 lg:pl-24 lg:sticky lg:top-0 xl:w-1/4"
     >
       <div className="flex flex-col gap-4">
         <h1 className="text-4xl font-bold sm:text-5xl">Waqar Bin Kalim</h1>
