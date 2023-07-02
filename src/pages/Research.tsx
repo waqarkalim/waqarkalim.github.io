@@ -8,15 +8,13 @@ interface CardProps {
 
 const Card = ({ date, websiteUrl, title }: CardProps) => (
   <section className="flex flex-col gap-2">
-    <p className="text-sm text-gray-500 uppercase">
-      {`${date} (Published Date)`}
-    </p>
+    <p className="date">{`${date} (Published Date)`}</p>
     <a href={websiteUrl}>{title}</a>
   </section>
 )
 
 const Research = () => (
-  <section id="research" className="flex flex-col gap-4">
+  <section id="research" className="section">
     <h2 className="section__heading">Research</h2>
     <div className="flex flex-col gap-12">
       <Card
