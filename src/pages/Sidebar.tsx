@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import GithubIcon from './icons/Github'
 import LinkedInIcon from './icons/LinkedIn'
 import TwitterIcon from './icons/Twitter'
-import { useLocation } from 'react-router-dom'
 
 const NAV_HEADER = [
   'about',
