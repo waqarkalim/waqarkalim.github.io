@@ -7,7 +7,7 @@ import Writing from './Writing'
 
 const Content = () => {
   return (
-    <section className="flex flex-col flex-grow gap-8 px-6 py-8 sm:px-12 sm:py-20 sm:gap-24 lg:w-1/2 lg:px-0 lg:py-24 lg:pr-24 lg:overflow-y-auto">
+    <section className="flex flex-col flex-grow gap-8 px-6 py-8 sm:px-12 sm:py-20 sm:gap-24 lg:w-1/2 lg:px-0 lg:py-24 lg:pr-24 lg:overflow-y-auto xl:w-1/4">
       <About />
       <Education />
       <Experience />
