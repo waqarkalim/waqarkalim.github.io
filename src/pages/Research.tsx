@@ -14,7 +14,7 @@ const Card = ({ date, websiteUrl, title }: CardProps) => (
 )
 
 const Research = () => (
-  <section id="research" className="flex flex-col gap-4">
+  <section id="research" className="section">
     <h2 className="section__heading">Research</h2>
     <div className="flex flex-col gap-12">
       <Card

@@ -18,7 +18,7 @@ const Card = ({
   description,
   tags,
 }: CardProps) => (
-  <section id={id} className="flex flex-col gap-2 sm:flex-row">
+  <section id={id} className="section sm:flex-row">
     <p className="flex-grow date">{range}</p>
     <div className="flex flex-col gap-2 sm:w-3/4">
       <a href={websiteUrl}>{position}</a>

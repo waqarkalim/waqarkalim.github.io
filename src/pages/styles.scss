@@ -1,3 +1,7 @@
+.section {
+  @apply flex flex-col gap-4;
+}
+
 .section__heading {
   @apply text-lg font-bold uppercase lg:text-base;
 }

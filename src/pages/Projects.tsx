@@ -51,7 +51,7 @@ const ViewProjectsAnchorLink = () => (
 )
 
 const Projects = () => (
-  <section id="projects" className="flex flex-col gap-4">
+  <section id="projects" className="section">
     <h2 className="section__heading">Projects</h2>
     <div className="flex flex-col gap-12">
       <Card
