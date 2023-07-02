@@ -1,3 +1,15 @@
 .section__heading {
-  @apply text-lg font-bold uppercase;
+  @apply text-lg font-bold uppercase lg:text-base;
+}
+
+.nav__listitem {
+  @apply text-xs font-bold uppercase;
+}
+
+.description__text {
+  @apply text-sm leading-normal text-gray-400;
+}
+
+.date {
+  @apply text-sm text-gray-500 uppercase lg:text-xs;
 }

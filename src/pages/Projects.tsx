@@ -1,3 +1,4 @@
+import Tag from './elements/Tag'
 import './styles.scss'
 
 interface CardProps {
@@ -22,7 +23,7 @@ const Card = ({
   tags,
 }: CardProps) => (
   <section id={id} className="flex flex-col gap-2 sm:flex-row">
-    <div className="flex flex-row flex-grow gap-1 text-sm text-gray-500 uppercase sm:flex-col">
+    <div className="flex flex-row flex-grow gap-1 date sm:flex-col">
       <p>{date}</p> <p className="sm:hidden">{`(${eventName})`}</p>
     </div>
     <div className="flex flex-col gap-2 sm:w-3/4">
@@ -30,12 +31,10 @@ const Card = ({
         {projectName}
         {winner ? <span>🥇</span> : ''}
       </a>
-      <p className="text-gray-400">{description}</p>
+      <p className="description__text">{description}</p>
       <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
         {tags.map((tag) => (
-          <span className="p-1 px-3 text-sm font-light bg-gray-800 rounded-full">
-            {tag}
-          </span>
+          <Tag text={tag} />
         ))}
       </div>
     </div>
@@ -43,7 +42,10 @@ const Card = ({
 )
 
 const ViewProjectsAnchorLink = () => (
-  <a className="text-md" href="https://github.com/waqarkalim?tab=repositories">
+  <a
+    className="text-base"
+    href="https://github.com/waqarkalim?tab=repositories"
+  >
     View Projects 🔗
   </a>
 )

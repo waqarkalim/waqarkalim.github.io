@@ -1,3 +1,4 @@
+import Tag from './elements/Tag'
 import './styles.scss'
 
 interface CardProps {
@@ -18,15 +19,13 @@ const Card = ({
   tags,
 }: CardProps) => (
   <section id={id} className="flex flex-col gap-2 sm:flex-row">
-    <p className="flex-grow text-sm text-gray-500 uppercase">{range}</p>
+    <p className="flex-grow date">{range}</p>
     <div className="flex flex-col gap-2 sm:w-3/4">
       <a href={websiteUrl}>{position}</a>
-      <p className="text-gray-400">{description}</p>
+      <p className="description__text">{description}</p>
       <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
         {tags.map((tag) => (
-          <span className="p-1 px-3 text-sm font-light bg-gray-800 rounded-full">
-            {tag}
-          </span>
+          <Tag text={tag} />
         ))}
       </div>
     </div>
@@ -34,7 +33,7 @@ const Card = ({
 )
 
 const ViewResumeAnchorLink = () => (
-  <a className="text-md" href="assets/resume.pdf">
+  <a className="text-base" href="assets/resume.pdf">
     View Resume 🔗
   </a>
 )
