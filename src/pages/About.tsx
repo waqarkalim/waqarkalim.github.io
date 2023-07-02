@@ -9,7 +9,7 @@ const About = () => {
         <strong className="text-gray-300">software developer</strong> who
         discovered my love for coding at an early age. With a strong foundation
         in Computer Science from my O/A Levels and Honours Specialization during
-        my Bachelor's. I have{' '}
+        my Bachelor's, I have{' '}
         <strong className="text-gray-300">
           three years of professional experience
         </strong>
