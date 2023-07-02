@@ -7,7 +7,50 @@
 }
 
 .nav__listitem {
-  @apply text-xs font-bold uppercase;
+  @apply text-sm font-bold uppercase;
+
+  // =============================================================
+  // Source: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
+  // =============================================================
+  a {
+    @apply text-gray-500;
+    position: relative;
+    text-decoration: none;
+  }
+
+  a:hover {
+    @apply text-slate-300;
+  }
+
+  a:hover::before {
+    @apply text-slate-300;
+    transform: scaleX(1);
+  }
+
+  a.active {
+    @apply text-slate-300;
+  }
+
+  a.active::before {
+    @apply text-slate-300;
+    transform: scaleX(1);
+  }
+
+  /* Animate the line from the left */
+  a::before {
+    @apply bg-slate-300;
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+  }
+  // =============================================================
 }
 
 .description__text {
