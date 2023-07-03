@@ -72,7 +72,7 @@ const Link = ({ href, className, children }: Omit<LinkProps, 'id'>) => {
 
 const CardContainer = ({ id, websiteUrl, date, children }: ICardContainer) => (
   <Article id={id} href={websiteUrl} className="card section sm:flex-row">
-    <p className="date flex w-1/3 flex-grow flex-row gap-1 sm:flex-col">
+    <p className="date flex w-full flex-grow flex-row gap-1 sm:flex-col md:w-1/3">
       {date}
     </p>
     <div className="flex flex-col gap-2 sm:w-3/4">{children}</div>
@@ -85,7 +85,7 @@ const ExperienceCard = (props: IExperienceCard) => (
       href={props.websiteUrl}
     >{`${props.position} - ${props.companyName}`}</Link>
     <p className="description__text">{props.description}</p>
-    <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
+    <div className="tag__list">
       {props.tags.map((tag, index) => (
         <Tag key={`${tag}-${index}`} text={tag} />
       ))}
@@ -111,7 +111,7 @@ const ProjectCard = (props: IProjectCard) => (
       {props.winner ? <span>🥇</span> : <></>}
     </Link>
     <p className="description__text">{props.description}</p>
-    <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
+    <div className="tag__list">
       {props.tags.map((tag, index) => (
         <Tag key={`${tag}-${index}`} text={tag} />
       ))}
