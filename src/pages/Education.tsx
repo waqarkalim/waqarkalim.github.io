@@ -5,8 +5,9 @@ const Education = () => (
   <section id="education" className="section">
     <h2 className="section__heading">Education</h2>
     <EducationCard
-      id="education"
+      id="western-university"
       type="education"
+      ariaLabel="Go to Western University page"
       universityName="Western University"
       gpa={3.7}
       date="Sept 2016 - May 2021"

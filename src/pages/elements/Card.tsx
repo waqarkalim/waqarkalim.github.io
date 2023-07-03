@@ -1,18 +1,21 @@
 import { ReactNode } from 'react'
 import useIsLaptopOrGreater from '../../hooks/useIsLaptopOrGreater'
 import Tag from './Tag'
+import Time from './Time'
 
 interface LinkProps {
   id: string
   href: string
   children: ReactNode
   className?: string
+  ariaLabel?: string
 }
 
 interface IBaseCard {
   id: string
   date: string
   websiteUrl: string
+  ariaLabel: string
 }
 
 interface IExperienceCard extends IBaseCard {
@@ -59,11 +62,16 @@ interface ICardContainer extends IBaseCard {
   children: ReactNode
 }
 
-const Article = ({ id, href, className, children }: LinkProps) => {
+const Article = ({ id, href, className, children, ariaLabel }: LinkProps) => {
   const isLaptopOrGreater = useIsLaptopOrGreater()
 
   return isLaptopOrGreater ? (
-    <a id={id} href={href} className={`${className || ''}`}>
+    <a
+      id={id}
+      href={href}
+      className={`${className || ''}`}
+      aria-label={ariaLabel}
+    >
       {children}
     </a>
   ) : (
@@ -85,17 +93,33 @@ const Link = ({ href, className, children }: Omit<LinkProps, 'id'>) => {
   )
 }
 
-const CardContainer = ({ id, websiteUrl, date, children }: ICardContainer) => (
-  <Article id={id} href={websiteUrl} className="card section sm:flex-row">
+const CardContainer = ({
+  id,
+  websiteUrl,
+  date,
+  children,
+  ariaLabel,
+}: ICardContainer) => (
+  <Article
+    id={id}
+    href={websiteUrl}
+    className="card section sm:flex-row"
+    ariaLabel={ariaLabel}
+  >
     <p className="date flex w-full flex-grow flex-row gap-1 sm:flex-col md:w-1/3">
-      {date}
+      <Time date={date} />
     </p>
     <div className="flex flex-col gap-2 sm:w-3/4">{children}</div>
   </Article>
 )
 
 const ExperienceCard = (props: IExperienceCard) => (
-  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
     <Link
       href={props.websiteUrl}
     >{`${props.position} - ${props.companyName}`}</Link>
@@ -109,7 +133,12 @@ const ExperienceCard = (props: IExperienceCard) => (
 )
 
 const EducationCard = (props: IEducationCard) => (
-  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
     <Link
       href={props.websiteUrl}
     >{`${props.universityName} - ${props.programName}`}</Link>
@@ -120,7 +149,12 @@ const EducationCard = (props: IEducationCard) => (
 )
 
 const ProjectCard = (props: IProjectCard) => (
-  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
     <Link href={props.websiteUrl}>
       {props.projectName} - {props.eventName}
       {props.winner ? <span>🥇</span> : <></>}
@@ -135,7 +169,12 @@ const ProjectCard = (props: IProjectCard) => (
 )
 
 const WritingCard = (props: IWritingCard) => (
-  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
     <Link href={props.websiteUrl}>{props.title}</Link>
     <p className="description__text">{props.description}</p>
     <div className="tag__list">
@@ -149,7 +188,12 @@ const WritingCard = (props: IWritingCard) => (
 )
 
 const ResearchCard = (props: IResearchCard) => (
-  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
     <Link href={props.websiteUrl}>{props.title}</Link>
     {props?.tags && (
       <div className="tag__list">

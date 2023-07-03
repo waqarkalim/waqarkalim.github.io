@@ -14,6 +14,7 @@ const Experience = () => (
       <ExperienceCard
         id="carfax"
         type="experience"
+        ariaLabel="Go to CARFAX page"
         date="Jan 2022 - Present"
         position="Associate Software Engineer"
         companyName="CARFAX"
@@ -24,6 +25,7 @@ const Experience = () => (
       <ExperienceCard
         id="big-blue-bubble"
         type="experience"
+        ariaLabel="Go to Big Blue Bubble page"
         date="May 2019 - Aug 2020"
         position="Game Analyst Intern"
         companyName="Big Blue Bubble"

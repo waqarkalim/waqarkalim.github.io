@@ -7,7 +7,7 @@ import Writing from './Writing'
 
 const Content = () => {
   return (
-    <div className="flex flex-col flex-grow gap-8 px-6 py-8 sm:px-12 sm:py-20 sm:gap-24 lg:w-1/2 lg:px-0 lg:py-24 lg:pr-24 lg:overflow-y-auto xl:w-1/4">
+    <div className="flex flex-grow flex-col gap-8 px-6 py-8 sm:gap-24 sm:px-12 sm:py-20 lg:w-1/2 lg:overflow-y-auto lg:px-0 lg:py-24 lg:pr-24 xl:w-1/4">
       <main className="flex flex-col gap-8 sm:gap-24">
         <About />
         <Education />
@@ -16,7 +16,7 @@ const Content = () => {
         <Writing />
         <Research />
       </main>
-      <footer className="flex justify-center gap-1 p-2 subtitle-text align-middle">
+      <footer className="subtitle-text flex justify-center gap-1 p-2 align-middle">
         <p>
           Design inspired by{' '}
           <a href="https://brittanychiang.com/" className="accent-text">

@@ -9,6 +9,7 @@ const Research = () => (
         type="research"
         title="Method Entity Extraction From Biomedical Text"
         id="method-entity-extraction-from-biomedical-text"
+        ariaLabel="Go to research about method entity extraction using biomedical text"
         date="October 2022"
         websiteUrl="https://aclanthology.org/2022.coling-1.207.pdf"
         tags={['Machine Learning', 'NLP', 'Python']}

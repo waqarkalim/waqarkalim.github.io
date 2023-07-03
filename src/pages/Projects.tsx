@@ -17,6 +17,7 @@ const Projects = () => (
       <ProjectCard
         id="merge-countflicts"
         type="project"
+        ariaLabel="Go to Merge Countflicts page"
         date="January 2021"
         eventName="Hack the North 2020++"
         websiteUrl="https://github.com/andrewhlu/merge-countflicts"
@@ -35,6 +36,7 @@ const Projects = () => (
       <ProjectCard
         id="mood-for-thought"
         type="project"
+        ariaLabel="Go to Mood For Thought page"
         date="November 2020"
         eventName="Hack Western 7"
         websiteUrl="https://github.com/waqarkalim/dailyjournal"

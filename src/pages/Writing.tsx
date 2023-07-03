@@ -7,6 +7,7 @@ const Writing = () => (
     <div className="flex flex-col gap-12">
       <WritingCard
         title="JavaScript — Using The Spread Operator (…)"
+        ariaLabel="Go to medium article about javascript using the spread operator"
         readTime="3 min read"
         id="javascript-using-the-spread-operator"
         type="writing"
