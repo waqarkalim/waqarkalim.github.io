@@ -1,4 +1,4 @@
-import Card from './elements/Card'
+import { ProjectCard } from './elements/Card'
 import './styles.scss'
 
 const ViewProjectsAnchorLink = () => (
@@ -14,7 +14,7 @@ const Projects = () => (
   <section id="projects" className="section">
     <h2 className="section__heading">Projects</h2>
     <div className="flex flex-col gap-12">
-      <Card
+      <ProjectCard
         id="merge-countflicts"
         type="project"
         date="January 2021"
@@ -32,7 +32,7 @@ const Projects = () => (
           'CockroachDB',
         ]}
       />
-      <Card
+      <ProjectCard
         id="mood-for-thought"
         type="project"
         date="November 2020"

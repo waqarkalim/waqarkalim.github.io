@@ -1,23 +1,21 @@
+import { EducationCard } from './elements/Card'
 import './styles.scss'
 
-const Education = () => {
-  return (
-    <section id="education" className="section">
-      <h2 className="section__heading">Education</h2>
-      <section id="bachelors" className="flex flex-col gap-2">
-        <p className="date">Sept 2016 - May 2021</p>
-        <a href="https://www.uwo.ca/">
-          Western University | Bachelor of Science
-        </a>
-        <p className="text-gray-400">
-          GPA: 3.7 / 4.0 | Dean's Honour List (4 Years)
-        </p>
-        <p className="text-gray-400">
-          Honours Specialization in Computer Science
-        </p>
-      </section>
-    </section>
-  )
-}
+const Education = () => (
+  <section id="education" className="section">
+    <h2 className="section__heading">Education</h2>
+    <EducationCard
+      id="education"
+      type="education"
+      universityName="Western University"
+      gpa={3.7}
+      date="Sept 2016 - May 2021"
+      websiteUrl="https://www.uwo.ca/"
+      description="Honours Specialization in Computer Science"
+      achievementText="Dean's Honour List (4 Years)"
+      programName="Bachelor of Science"
+    />
+  </section>
+)
 
 export default Education

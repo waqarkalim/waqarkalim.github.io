@@ -1,25 +1,47 @@
+import { ReactNode } from 'react'
 import useIsLaptopOrGreater from '../../hooks/useIsLaptopOrGreater'
 import Tag from './Tag'
-
-interface CardProps<T extends 'experience' | 'project'> {
-  id: string
-  type: T
-  date: string
-  websiteUrl: string
-  description: string
-  tags: string[]
-  position?: T extends 'experience' ? string : never
-  companyName?: T extends 'experience' ? string : never
-  projectName?: T extends 'project' ? string : never
-  eventName?: T extends 'project' ? string : never
-  winner?: T extends 'project' ? boolean : never
-}
 
 interface LinkProps {
   id: string
   href: string
-  children: any
+  children: ReactNode
   className?: string
+}
+
+interface IBaseCard {
+  id: string
+  type: 'experience' | 'project' | 'education'
+  date: string
+  websiteUrl: string
+  description: string
+}
+
+interface IExperienceCard extends IBaseCard {
+  position: string
+  companyName: string
+  tags: string[]
+}
+
+interface IProjectCard extends IBaseCard {
+  projectName: string
+  eventName: string
+  winner: boolean
+  tags: string[]
+}
+
+interface IEducationCard extends IBaseCard {
+  universityName: string
+  programName: string
+  gpa: number
+  achievementText: string
+}
+
+interface ICardContainer {
+  id: string
+  websiteUrl: string
+  date: string
+  children: ReactNode
 }
 
 const Article = ({ id, href, className, children }: LinkProps) => {
@@ -48,44 +70,51 @@ const Link = ({ href, className, children }: Omit<LinkProps, 'id'>) => {
   )
 }
 
-const Card = ({
-  id,
-  type,
-  date,
-  eventName,
-  position,
-  companyName,
-  websiteUrl,
-  projectName,
-  winner,
-  description,
-  tags,
-}: CardProps<'experience' | 'project'>) => (
+const CardContainer = ({ id, websiteUrl, date, children }: ICardContainer) => (
   <Article id={id} href={websiteUrl} className="card section sm:flex-row">
-    <div className="flex flex-row flex-grow gap-1 date sm:flex-col">
-      <p>{date}</p>
-    </div>
-    <div className="flex flex-col gap-2 sm:w-3/4">
-      <Link href={websiteUrl}>
-        {type === 'experience' ? (
-          <>
-            {position} - {companyName}
-          </>
-        ) : (
-          <>
-            {projectName} - {type === 'project' ? eventName : ''}
-            {winner ? <span>🥇</span> : ''}
-          </>
-        )}
-      </Link>
-      <p className="description__text">{description}</p>
-      <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
-        {tags.map((tag, index) => (
-          <Tag key={`${tag}-${index}`} text={tag} />
-        ))}
-      </div>
-    </div>
+    <p className="date flex flex-row flex-grow gap-1 sm:flex-col">{date}</p>
+    <div className="flex flex-col gap-2 sm:w-3/4">{children}</div>
   </Article>
 )
 
-export default Card
+const ExperienceCard = (props: IExperienceCard) => (
+  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+    <Link
+      href={props.websiteUrl}
+    >{`${props.position} - ${props.companyName}`}</Link>
+    <p className="description__text">{props.description}</p>
+    <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
+      {props.tags.map((tag, index) => (
+        <Tag key={`${tag}-${index}`} text={tag} />
+      ))}
+    </div>
+  </CardContainer>
+)
+
+const EducationCard = (props: IEducationCard) => (
+  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+    <Link
+      href={props.websiteUrl}
+    >{`${props.universityName} - ${props.programName}`}</Link>
+    <p className="text-gray-400">{`GPA: ${props.gpa} / 4.0 | ${props.achievementText}`}</p>
+    <p className="text-gray-400">{props.description}</p>
+  </CardContainer>
+)
+
+const ProjectCard = (props: IProjectCard) => (
+  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+    <Link href={props.websiteUrl}>
+      {`${props.projectName} - ${props.eventName} ${
+        props.winner ? <span>🥇</span> : <></>
+      }`}
+    </Link>
+    <p className="description__text">{props.description}</p>
+    <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
+      {props.tags.map((tag, index) => (
+        <Tag key={`${tag}-${index}`} text={tag} />
+      ))}
+    </div>
+  </CardContainer>
+)
+
+export { EducationCard, ProjectCard, ExperienceCard }

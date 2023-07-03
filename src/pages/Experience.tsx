@@ -1,4 +1,4 @@
-import Card from './elements/Card'
+import { ExperienceCard } from './elements/Card'
 import './styles.scss'
 
 const ViewResumeAnchorLink = () => (
@@ -11,7 +11,7 @@ const Experience = () => (
   <section id="experience" className="flex flex-col gap-4">
     <h2 className="section__heading">Experience</h2>
     <div className="flex flex-col gap-12">
-      <Card
+      <ExperienceCard
         id="carfax"
         type="experience"
         date="Jan 2022 - Present"
@@ -21,7 +21,7 @@ const Experience = () => (
         description="Made an impact by improving consumer-facing applications using Typescript, React, and Java, resulting in better KPIs. Also, worked on internal tools which made business logic updates faster to implement. These contributions have optimized processes, improved the user experience, and overall improved KPIs."
         tags={['React', 'TypeScript', 'Java', 'Git', 'GitLab', 'AWS']}
       />
-      <Card
+      <ExperienceCard
         id="big-blue-bubble"
         type="experience"
         date="May 2019 - Aug 2020"
