@@ -55,10 +55,7 @@ interface IResearchCard extends IBaseCard {
   tags?: string[]
 }
 
-interface ICardContainer {
-  id: string
-  websiteUrl: string
-  date: string
+interface ICardContainer extends IBaseCard {
   children: ReactNode
 }
 
