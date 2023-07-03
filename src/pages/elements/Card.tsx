@@ -1,103 +1,208 @@
-import useWindowSize from '../../hooks/useWindowSize'
-
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from './../../../tailwind.config.ts'
-
+import { ReactNode } from 'react'
+import useIsLaptopOrGreater from '../../hooks/useIsLaptopOrGreater'
 import Tag from './Tag'
-interface CardProps<T extends 'experience' | 'project'> {
+import Time from './Time'
+
+interface LinkProps {
   id: string
-  type: T
-  date: string
-  websiteUrl: string
-  description: string
-  tags: string[]
-  position?: T extends 'experience' ? string : never
-  projectName?: T extends 'project' ? string : never
-  eventName?: T extends 'project' ? string : never
-  winner?: T extends 'project' ? boolean : never
+  href: string
+  children: ReactNode
+  className?: string
+  ariaLabel?: string
 }
 
-const Card = ({
-  id,
-  type,
-  date,
-  eventName,
-  position,
-  websiteUrl,
-  projectName,
-  winner,
-  description,
-  tags,
-}: CardProps<'experience' | 'project'>) => {
-  const size = useWindowSize()
-  const fullConfig = resolveConfig(tailwindConfig) as any
+interface IBaseCard {
+  id: string
+  date: string
+  websiteUrl: string
+  ariaLabel: string
+}
 
-  const isLaptopOrGreater =
-    size[0] > Number(fullConfig.theme.screens.md.replaceAll('px', ''))
+interface IExperienceCard extends IBaseCard {
+  type: 'experience'
+  position: string
+  companyName: string
+  description: string
+  tags: string[]
+}
 
-  if (isLaptopOrGreater) {
-    return (
-      <a href={websiteUrl} className="flex-row card section">
-        <div className="flex flex-row flex-grow gap-1 date sm:flex-col">
-          <p>{date}</p>
-          {type === 'project' ? (
-            <p className="sm:hidden">{`(${eventName})`}</p>
-          ) : (
-            <></>
-          )}
-        </div>
-        <div className="flex flex-col gap-2 sm:w-3/4">
-          <p>
-            {type === 'experience' ? (
-              position
-            ) : (
-              <>
-                {projectName}
-                {winner ? <span>🥇</span> : ''}
-              </>
-            )}
-          </p>
-          <p className="description__text">{description}</p>
-          <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
-            {tags.map((tag, index) => (
-              <Tag key={`${tag}-${index}`} text={tag} />
-            ))}
-          </div>
-        </div>
-      </a>
-    )
-  }
+interface IProjectCard extends IBaseCard {
+  type: 'project'
+  projectName: string
+  eventName: string
+  winner: boolean
+  description: string
+  tags: string[]
+}
 
-  return (
-    <section id={id} className="card section sm:flex-row">
-      <div className="flex flex-row flex-grow gap-1 date sm:flex-col">
-        <p>{date}</p>
-        {type === 'project' ? (
-          <p className="sm:hidden">{`(${eventName})`}</p>
-        ) : (
-          <></>
-        )}
-      </div>
-      <div className="flex flex-col gap-2 sm:w-3/4">
-        <a href={websiteUrl}>
-          {type === 'experience' ? (
-            position
-          ) : (
-            <>
-              {projectName}
-              {winner ? <span>🥇</span> : ''}
-            </>
-          )}
-        </a>
-        <p className="description__text">{description}</p>
-        <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
-          {tags.map((tag, index) => (
-            <Tag key={`${tag}-${index}`} text={tag} />
-          ))}
-        </div>
-      </div>
-    </section>
+interface IEducationCard extends IBaseCard {
+  type: 'education'
+  universityName: string
+  programName: string
+  description: string
+  gpa: number
+  achievementText: string
+}
+
+interface IWritingCard extends IBaseCard {
+  type: 'writing'
+  title: string
+  description: string
+  readTime: string
+  tags?: string[]
+}
+
+interface IResearchCard extends IBaseCard {
+  type: 'research'
+  title: string
+  tags?: string[]
+}
+
+interface ICardContainer extends IBaseCard {
+  children: ReactNode
+}
+
+const Article = ({ id, href, className, children, ariaLabel }: LinkProps) => {
+  const isLaptopOrGreater = useIsLaptopOrGreater()
+
+  return isLaptopOrGreater ? (
+    <a
+      id={id}
+      href={href}
+      className={`${className || ''}`}
+      aria-label={ariaLabel}
+    >
+      {children}
+    </a>
+  ) : (
+    <article id={id} className={`${className || ''}`}>
+      {children}
+    </article>
   )
 }
 
-export default Card
+const Link = ({ href, className, children }: Omit<LinkProps, 'id'>) => {
+  const isLaptopOrGreater = useIsLaptopOrGreater()
+
+  return isLaptopOrGreater ? (
+    <p className={`${className || ''} font-medium`}>{children}</p>
+  ) : (
+    <a href={href} className={`${className || ''} font-medium`}>
+      {children}
+    </a>
+  )
+}
+
+const CardContainer = ({
+  id,
+  websiteUrl,
+  date,
+  children,
+  ariaLabel,
+}: ICardContainer) => (
+  <Article
+    id={id}
+    href={websiteUrl}
+    className="card section sm:flex-row"
+    ariaLabel={ariaLabel}
+  >
+    <p className="date flex w-full flex-grow flex-row gap-1 sm:flex-col md:w-1/3">
+      <Time date={date} />
+    </p>
+    <div className="flex flex-col gap-2 sm:w-3/4">{children}</div>
+  </Article>
+)
+
+const ExperienceCard = (props: IExperienceCard) => (
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
+    <Link
+      href={props.websiteUrl}
+    >{`${props.position} - ${props.companyName}`}</Link>
+    <p className="description__text">{props.description}</p>
+    <div className="tag__list">
+      {props.tags.map((tag, index) => (
+        <Tag key={`${tag}-${index}`} text={tag} />
+      ))}
+    </div>
+  </CardContainer>
+)
+
+const EducationCard = (props: IEducationCard) => (
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
+    <Link
+      href={props.websiteUrl}
+    >{`${props.universityName} - ${props.programName}`}</Link>
+    <p className="subtitle-text">{`GPA: ${props.gpa} / 4.0`}</p>
+    <p className="subtitle-text">{props.achievementText}</p>
+    <p className="subtitle-text">{props.description}</p>
+  </CardContainer>
+)
+
+const ProjectCard = (props: IProjectCard) => (
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
+    <Link href={props.websiteUrl}>
+      {props.projectName} - {props.eventName}
+      {props.winner ? <span>🥇</span> : <></>}
+    </Link>
+    <p className="description__text">{props.description}</p>
+    <div className="tag__list">
+      {props.tags.map((tag, index) => (
+        <Tag key={`${tag}-${index}`} text={tag} />
+      ))}
+    </div>
+  </CardContainer>
+)
+
+const WritingCard = (props: IWritingCard) => (
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
+    <Link href={props.websiteUrl}>{props.title}</Link>
+    <p className="description__text">{props.description}</p>
+    <div className="tag__list">
+      <Tag key={`${props.readTime}-0`} text={props.readTime} />
+      {props?.tags &&
+        props.tags.map((tag, index) => (
+          <Tag key={`${tag}-${index + 1}`} text={tag} />
+        ))}
+    </div>
+  </CardContainer>
+)
+
+const ResearchCard = (props: IResearchCard) => (
+  <CardContainer
+    id={props.id}
+    websiteUrl={props.websiteUrl}
+    date={props.date}
+    ariaLabel={props.ariaLabel}
+  >
+    <Link href={props.websiteUrl}>{props.title}</Link>
+    {props?.tags && (
+      <div className="tag__list">
+        {props.tags.map((tag, index) => (
+          <Tag key={`${tag}-${index}`} text={tag} />
+        ))}
+      </div>
+    )}
+  </CardContainer>
+)
+
+export { EducationCard, ProjectCard, ExperienceCard, WritingCard, ResearchCard }

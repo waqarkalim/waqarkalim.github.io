@@ -1,12 +1,12 @@
-import Card from './elements/Card'
+import { ProjectCard } from './elements/Card'
 import './styles.scss'
 
 const ViewProjectsAnchorLink = () => (
   <a
-    className="text-base"
+    className="text-base hover:underline"
     href="https://github.com/waqarkalim?tab=repositories"
   >
-    View Projects 🔗
+    View More Projects 🔗
   </a>
 )
 
@@ -14,9 +14,10 @@ const Projects = () => (
   <section id="projects" className="section">
     <h2 className="section__heading">Projects</h2>
     <div className="flex flex-col gap-12">
-      <Card
+      <ProjectCard
         id="merge-countflicts"
         type="project"
+        ariaLabel="Go to Merge Countflicts page"
         date="January 2021"
         eventName="Hack the North 2020++"
         websiteUrl="https://github.com/andrewhlu/merge-countflicts"
@@ -32,9 +33,10 @@ const Projects = () => (
           'CockroachDB',
         ]}
       />
-      <Card
+      <ProjectCard
         id="mood-for-thought"
         type="project"
+        ariaLabel="Go to Mood For Thought page"
         date="November 2020"
         eventName="Hack Western 7"
         websiteUrl="https://github.com/waqarkalim/dailyjournal"

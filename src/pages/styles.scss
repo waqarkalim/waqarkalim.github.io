@@ -1,5 +1,7 @@
+@import './../index.scss';
+
 .section {
-  @apply flex flex-col gap-4;
+  @apply flex flex-col gap-4 lg:p-5 lg:target:rounded-lg lg:target:bg-slate-500 lg:target:bg-opacity-10;
 }
 
 .section__heading {
@@ -13,32 +15,32 @@
   // Source: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
   // =============================================================
   a {
-    @apply text-gray-500;
+    @extend .subtitle-text;
     position: relative;
     text-decoration: none;
   }
 
   a:hover {
-    @apply text-slate-300;
+    @extend .accent-text;
   }
 
   a:hover::before {
-    @apply text-slate-300;
+    @extend .accent-text;
     transform: scaleX(1);
   }
 
   a.active {
-    @apply text-slate-300;
+    @extend .accent-text;
   }
 
   a.active::before {
-    @apply text-slate-300;
+    @extend .accent-text;
     transform: scaleX(1);
   }
 
   /* Animate the line from the left */
   a::before {
-    @apply bg-slate-300;
+    @extend .accent-bg;
     content: '';
     position: absolute;
     display: block;
@@ -54,9 +56,11 @@
 }
 
 .description__text {
-  @apply text-sm leading-normal text-gray-400;
+  @extend .subtitle-text;
+  @apply text-sm leading-normal;
 }
 
 .date {
-  @apply text-sm text-gray-500 uppercase lg:text-xs;
+  @extend .subtitle-text;
+  @apply text-sm uppercase;
 }

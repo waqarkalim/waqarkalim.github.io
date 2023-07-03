@@ -1,31 +1,19 @@
+import { WritingCard } from './elements/Card'
 import './styles.scss'
 
-interface CardProps {
-  date: string
-  readTime: string
-  websiteUrl: string
-  title: string
-  subtitle: string
-}
-
-const Card = ({ date, readTime, websiteUrl, title, subtitle }: CardProps) => (
-  <section className="flex flex-col gap-2">
-    <p className="date">{`${date} (${readTime})`}</p>
-    <a href={websiteUrl}>{title}</a>
-    <p className="description__text">{subtitle}</p>
-  </section>
-)
-
 const Writing = () => (
-  <section id="writing" className="flex flex-col gap-4">
+  <section id="writing" className="section">
     <h2 className="section__heading">Writing</h2>
     <div className="flex flex-col gap-12">
-      <Card
-        date="March 2022"
-        readTime="3 min read"
-        websiteUrl="https://medium.com/@waqar_kalim/javascript-using-the-spread-operator-405266faf42b"
+      <WritingCard
         title="JavaScript — Using The Spread Operator (…)"
-        subtitle="A simplified look at how to use the Spread Operator (…) in JavaScript"
+        ariaLabel="Go to medium article about javascript using the spread operator"
+        readTime="3 min read"
+        id="javascript-using-the-spread-operator"
+        type="writing"
+        date="March 2022"
+        websiteUrl="https://medium.com/@waqar_kalim/javascript-using-the-spread-operator-405266faf42b"
+        description="A simplified look at how to use the Spread Operator (…) in JavaScript"
       />
     </div>
   </section>

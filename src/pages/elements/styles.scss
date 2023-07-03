@@ -1,7 +1,11 @@
+.tag__list {
+  @apply flex flex-row flex-wrap justify-start gap-2 align-middle;
+}
+
 .tag {
-  @apply p-1 px-3 text-sm font-light bg-gray-800 rounded-full lg:text-xs lg:px-2.5;
+  @apply rounded-full bg-slate-800 p-1 px-3 text-sm font-light lg:px-2.5;
 }
 
 .card {
-  @apply lg:hover:bg-slate-500 lg:p-5 lg:hover:rounded-md lg:hover:bg-opacity-10;
+  @apply lg:p-5 lg:hover:rounded-lg lg:hover:bg-slate-500 lg:hover:bg-opacity-10;
 }
