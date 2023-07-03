@@ -13,7 +13,7 @@
   // Source: https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
   // =============================================================
   a {
-    @apply text-gray-500;
+    @apply text-gray-400;
     position: relative;
     text-decoration: none;
   }
@@ -58,5 +58,5 @@
 }
 
 .date {
-  @apply text-sm text-gray-500 uppercase lg:text-xs;
+  @apply text-sm text-gray-400 uppercase lg:text-xs;
 }

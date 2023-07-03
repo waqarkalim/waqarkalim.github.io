@@ -16,7 +16,7 @@ const Content = () => {
         <Writing />
         <Research />
       </main>
-      <footer className="flex justify-center gap-1 p-2 text-gray-500 align-middle">
+      <footer className="flex justify-center gap-1 p-2 text-slate-400 align-middle">
         <p>
           Design inspired by{' '}
           <a href="https://brittanychiang.com/" className="text-gray-300">

@@ -96,7 +96,8 @@ const EducationCard = (props: IEducationCard) => (
     <Link
       href={props.websiteUrl}
     >{`${props.universityName} - ${props.programName}`}</Link>
-    <p className="text-gray-400">{`GPA: ${props.gpa} / 4.0 | ${props.achievementText}`}</p>
+    <p className="text-gray-400">{`GPA: ${props.gpa} / 4.0`}</p>
+    <p className="text-gray-400">{props.achievementText}</p>
     <p className="text-gray-400">{props.description}</p>
   </CardContainer>
 )
@@ -104,9 +105,8 @@ const EducationCard = (props: IEducationCard) => (
 const ProjectCard = (props: IProjectCard) => (
   <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
     <Link href={props.websiteUrl}>
-      {`${props.projectName} - ${props.eventName} ${
-        props.winner ? <span>🥇</span> : <></>
-      }`}
+      {`${props.projectName} - ${props.eventName}`}
+      {props.winner ? <span>🥇</span> : <></>}
     </Link>
     <p className="description__text">{props.description}</p>
     <div className="flex flex-row flex-wrap justify-start gap-2 align-middle">
