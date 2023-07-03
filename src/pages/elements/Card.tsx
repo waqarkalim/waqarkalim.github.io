@@ -11,30 +11,48 @@ interface LinkProps {
 
 interface IBaseCard {
   id: string
-  type: 'experience' | 'project' | 'education'
   date: string
   websiteUrl: string
-  description: string
 }
 
 interface IExperienceCard extends IBaseCard {
+  type: 'experience'
   position: string
   companyName: string
+  description: string
   tags: string[]
 }
 
 interface IProjectCard extends IBaseCard {
+  type: 'project'
   projectName: string
   eventName: string
   winner: boolean
+  description: string
   tags: string[]
 }
 
 interface IEducationCard extends IBaseCard {
+  type: 'education'
   universityName: string
   programName: string
+  description: string
   gpa: number
   achievementText: string
+}
+
+interface IWritingCard extends IBaseCard {
+  type: 'writing'
+  title: string
+  description: string
+  readTime: string
+  tags?: string[]
+}
+
+interface IResearchCard extends IBaseCard {
+  type: 'research'
+  title: string
+  tags?: string[]
 }
 
 interface ICardContainer {
@@ -62,9 +80,9 @@ const Link = ({ href, className, children }: Omit<LinkProps, 'id'>) => {
   const isLaptopOrGreater = useIsLaptopOrGreater()
 
   return isLaptopOrGreater ? (
-    <p className={`${className || ''}`}>{children}</p>
+    <p className={`${className || ''} font-medium`}>{children}</p>
   ) : (
-    <a href={href} className={`${className || ''}`}>
+    <a href={href} className={`${className || ''} font-medium`}>
       {children}
     </a>
   )
@@ -119,4 +137,31 @@ const ProjectCard = (props: IProjectCard) => (
   </CardContainer>
 )
 
-export { EducationCard, ProjectCard, ExperienceCard }
+const WritingCard = (props: IWritingCard) => (
+  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+    <Link href={props.websiteUrl}>{props.title}</Link>
+    <p className="description__text">{props.description}</p>
+    <div className="tag__list">
+      <Tag key={`${props.readTime}-0`} text={props.readTime} />
+      {props?.tags &&
+        props.tags.map((tag, index) => (
+          <Tag key={`${tag}-${index + 1}`} text={tag} />
+        ))}
+    </div>
+  </CardContainer>
+)
+
+const ResearchCard = (props: IResearchCard) => (
+  <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
+    <Link href={props.websiteUrl}>{props.title}</Link>
+    {props?.tags && (
+      <div className="tag__list">
+        {props.tags.map((tag, index) => (
+          <Tag key={`${tag}-${index}`} text={tag} />
+        ))}
+      </div>
+    )}
+  </CardContainer>
+)
+
+export { EducationCard, ProjectCard, ExperienceCard, WritingCard, ResearchCard }
