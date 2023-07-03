@@ -54,9 +54,9 @@
 }
 
 .description__text {
-  @apply text-sm leading-normal text-slate-400;
+  @apply text-sm text-slate-400 leading-normal;
 }
 
 .date {
-  @apply text-sm text-slate-400 uppercase lg:text-xs;
+  @apply text-sm text-slate-400 uppercase lg:w-1/3;
 }
