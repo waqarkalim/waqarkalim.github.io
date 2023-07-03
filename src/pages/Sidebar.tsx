@@ -5,8 +5,8 @@ import TwitterIcon from './icons/Twitter'
 
 const NAV_HEADER = [
   'about',
-  'experience',
   'education',
+  'experience',
   'projects',
   'writing',
   'research',
