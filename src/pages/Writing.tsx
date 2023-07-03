@@ -2,7 +2,7 @@ import { WritingCard } from './elements/Card'
 import './styles.scss'
 
 const Writing = () => (
-  <section id="writing" className="flex flex-col gap-4">
+  <section id="writing" className="section">
     <h2 className="section__heading">Writing</h2>
     <div className="flex flex-col gap-12">
       <WritingCard

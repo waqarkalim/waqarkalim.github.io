@@ -8,7 +8,7 @@ const ViewResumeAnchorLink = () => (
 )
 
 const Experience = () => (
-  <section id="experience" className="flex flex-col gap-4">
+  <section id="experience" className="section">
     <h2 className="section__heading">Experience</h2>
     <div className="flex flex-col gap-12">
       <ExperienceCard
