@@ -17,7 +17,7 @@ const Experience = () => (
         date="Jan 2022 - Present"
         position="Associate Software Engineer"
         websiteUrl="https://www.carfax.com/"
-        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nemo nihil omnis recusandae excepturi, repellat officia incidunt explicabo nisi accusantium autem aliquid? Quos quibusdam, itaque earum eius odit tempora ullam!"
+        description="Made an impact by improving consumer-facing applications using Typescript, React, and Java, resulting in better KPIs. Also, worked on internal tools which made business logic updates faster to implement. These contributions have optimized processes, improved the user experience, and overall improved KPIs."
         tags={['React', 'TypeScript', 'Java', 'Git', 'GitLab', 'AWS']}
       />
       <Card
@@ -26,7 +26,7 @@ const Experience = () => (
         date="May 2019 - Aug 2020"
         position="Game Analyst Intern"
         websiteUrl="https://www.bigbluebubble.com/"
-        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nemo nihil omnis recusandae excepturi, repellat officia incidunt explicabo nisi accusantium autem aliquid? Quos quibusdam, itaque earum eius odit tempora ullam!"
+        description="Made an impact by analyzing data using SQL and Redshift, providing valuable insights for informed decision-making. Also, worked on an internal React-based tool, streamlining content updates and improving the user experience. These contributions optimized processes and facilitated data-driven decision-making."
         tags={['JavaScript', 'Java', 'Python', 'SQL', 'Docker', 'AWS']}
       />
       <ViewResumeAnchorLink />
