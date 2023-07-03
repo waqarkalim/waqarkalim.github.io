@@ -34,7 +34,7 @@ const Sidebar = () => {
         <p className="text-gray-400">
           I enjoy building useful, accessible, and impactful projects
         </p>
-        <nav className="hidden lg:flex lg:py-4" aria-label="site map">
+        <nav className="hidden lg:flex lg:py-12" aria-label="site map">
           <ul className="flex flex-col justify-center gap-4 align-middle">
             {NAV_HEADER.map((header, index) => (
               <li
