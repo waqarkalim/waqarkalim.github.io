@@ -1,10 +1,6 @@
-import { IIconProps } from './types'
-
-const GithubIcon = ({ isDarkMode = false, width, height }: IIconProps) => (
+const GithubIcon = () => (
   <svg
-    fill={isDarkMode ? 'black' : 'white'}
-    width={width}
-    height={height}
+    className="icon"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 496 512"
   >

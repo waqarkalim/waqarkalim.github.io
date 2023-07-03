@@ -1,11 +1,7 @@
-import { IIconProps } from './types'
-
-const TwitterIcon = ({ isDarkMode = false, width, height }: IIconProps) => {
+const TwitterIcon = () => {
   return (
     <svg
-      fill={isDarkMode ? 'black' : 'white'}
-      width={width}
-      height={height}
+      className="icon"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
     >

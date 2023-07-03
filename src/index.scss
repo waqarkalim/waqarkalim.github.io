@@ -4,12 +4,16 @@
 
 body,
 html {
-  @apply m-0 p-0 h-max text-slate-100 bg-gradient-to-tl from-slate-950 to-slate-900 scroll-smooth;
+  @apply m-0 h-max scroll-smooth bg-gradient-to-tl from-slate-950 to-slate-900 p-0 text-slate-100;
 }
 
 @font-face {
   font-family: 'Inter-Regular';
   src: url('/src/assets/Inter/static/Inter-Regular.ttf') format('truetype');
+}
+
+.icon {
+  @apply h-6 w-6 fill-white hover:fill-slate-300;
 }
 
 .accent-text {

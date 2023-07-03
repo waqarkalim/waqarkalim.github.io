@@ -72,7 +72,7 @@ const Link = ({ href, className, children }: Omit<LinkProps, 'id'>) => {
 
 const CardContainer = ({ id, websiteUrl, date, children }: ICardContainer) => (
   <Article id={id} href={websiteUrl} className="card section sm:flex-row">
-    <p className="date flex flex-row flex-grow gap-1 sm:flex-col w-1/3">
+    <p className="date flex w-1/3 flex-grow flex-row gap-1 sm:flex-col">
       {date}
     </p>
     <div className="flex flex-col gap-2 sm:w-3/4">{children}</div>
@@ -107,7 +107,7 @@ const EducationCard = (props: IEducationCard) => (
 const ProjectCard = (props: IProjectCard) => (
   <CardContainer id={props.id} websiteUrl={props.websiteUrl} date={props.date}>
     <Link href={props.websiteUrl}>
-      {`${props.projectName} - ${props.eventName}`}
+      {props.projectName} - {props.eventName}
       {props.winner ? <span>🥇</span> : <></>}
     </Link>
     <p className="description__text">{props.description}</p>
