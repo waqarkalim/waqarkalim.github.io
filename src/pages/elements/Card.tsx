@@ -1,16 +1,16 @@
 import Tag from './Tag'
 
-interface CardProps {
+interface CardProps<T extends 'experience' | 'project'> {
   id: string
-  type: 'experience' | 'project'
+  type: T
   date: string
-  eventName: string
-  position: string
   websiteUrl: string
-  projectName: string
-  winner: boolean
   description: string
   tags: string[]
+  position?: T extends 'experience' ? string : never
+  projectName?: T extends 'project' ? string : never
+  eventName?: T extends 'project' ? string : never
+  winner?: T extends 'project' ? boolean : never
 }
 
 const Card = ({
@@ -24,7 +24,7 @@ const Card = ({
   winner,
   description,
   tags,
-}: CardProps) => {
+}: CardProps<'experience' | 'project'>) => {
   return (
     <section id={id} className="section sm:flex-row">
       <div className="flex flex-row flex-grow gap-1 date sm:flex-col">

@@ -31,7 +31,6 @@ const Projects = () => (
           'Socket.io',
           'CockroachDB',
         ]}
-        position={''}
       />
       <Card
         id="mood-for-thought"
@@ -43,7 +42,6 @@ const Projects = () => (
         description="Worked with a group of 4 people to develop a journaling application"
         tags={['JavaScript', 'React', 'Node.js', 'Express', 'MySQL']}
         type={'experience'}
-        position={''}
       />
       <ViewProjectsAnchorLink />
     </div>

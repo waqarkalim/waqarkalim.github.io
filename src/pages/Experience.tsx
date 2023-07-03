@@ -19,9 +19,6 @@ const Experience = () => (
         websiteUrl="https://www.carfax.com/"
         description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nemo nihil omnis recusandae excepturi, repellat officia incidunt explicabo nisi accusantium autem aliquid? Quos quibusdam, itaque earum eius odit tempora ullam!"
         tags={['React', 'TypeScript', 'Java', 'Git', 'GitLab', 'AWS']}
-        eventName={''}
-        projectName={''}
-        winner={false}
       />
       <Card
         id="big-blue-bubble"
@@ -31,9 +28,6 @@ const Experience = () => (
         websiteUrl="https://www.bigbluebubble.com/"
         description="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nemo nihil omnis recusandae excepturi, repellat officia incidunt explicabo nisi accusantium autem aliquid? Quos quibusdam, itaque earum eius odit tempora ullam!"
         tags={['JavaScript', 'Java', 'Python', 'SQL', 'Docker', 'AWS']}
-        eventName={''}
-        projectName={''}
-        winner={false}
       />
       <ViewResumeAnchorLink />
     </div>
