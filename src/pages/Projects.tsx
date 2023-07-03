@@ -6,7 +6,7 @@ const ViewProjectsAnchorLink = () => (
     className="text-base hover:underline"
     href="https://github.com/waqarkalim?tab=repositories"
   >
-    View Projects 🔗
+    View More Projects 🔗
   </a>
 )
 
