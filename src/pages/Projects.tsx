@@ -3,7 +3,7 @@ import './styles.scss'
 
 const ViewProjectsAnchorLink = () => (
   <a
-    className="text-base"
+    className="text-base hover:underline"
     href="https://github.com/waqarkalim?tab=repositories"
   >
     View Projects 🔗

@@ -2,7 +2,7 @@ import { ExperienceCard } from './elements/Card'
 import './styles.scss'
 
 const ViewResumeAnchorLink = () => (
-  <a className="text-base" href="assets/resume.pdf">
+  <a className="text-base hover:underline" href="assets/resume.pdf">
     View Resume 🔗
   </a>
 )
