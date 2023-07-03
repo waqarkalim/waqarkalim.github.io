@@ -34,6 +34,7 @@ const Projects = () => (
       />
       <Card
         id="mood-for-thought"
+        type="project"
         date="November 2020"
         eventName="Hack Western 7"
         websiteUrl="https://github.com/waqarkalim/dailyjournal"
@@ -41,7 +42,6 @@ const Projects = () => (
         winner={false}
         description="Worked with a group of 4 people to develop a journaling application"
         tags={['JavaScript', 'React', 'Node.js', 'Express', 'MySQL']}
-        type={'experience'}
       />
       <ViewProjectsAnchorLink />
     </div>

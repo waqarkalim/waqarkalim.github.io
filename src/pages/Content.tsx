@@ -17,10 +17,12 @@ const Content = () => {
         <Research />
       </main>
       <footer className="flex justify-center gap-1 p-2 text-gray-500 align-middle">
-        Developed by
-        <a href="https://github.com/waqarkalim" className="text-gray-300">
-          Waqar Bin Kalim
-        </a>
+        <p>
+          Developed by{' '}
+          <a href="https://github.com/waqarkalim" className="text-gray-300">
+            Waqar Bin Kalim
+          </a>
+        </p>
       </footer>
     </div>
   )
