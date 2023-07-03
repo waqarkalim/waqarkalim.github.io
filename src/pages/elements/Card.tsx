@@ -96,9 +96,9 @@ const EducationCard = (props: IEducationCard) => (
     <Link
       href={props.websiteUrl}
     >{`${props.universityName} - ${props.programName}`}</Link>
-    <p className="text-gray-400">{`GPA: ${props.gpa} / 4.0`}</p>
-    <p className="text-gray-400">{props.achievementText}</p>
-    <p className="text-gray-400">{props.description}</p>
+    <p className="text-slate-400">{`GPA: ${props.gpa} / 4.0`}</p>
+    <p className="text-slate-400">{props.achievementText}</p>
+    <p className="text-slate-400">{props.description}</p>
   </CardContainer>
 )
 

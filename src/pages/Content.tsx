@@ -19,11 +19,11 @@ const Content = () => {
       <footer className="flex justify-center gap-1 p-2 text-slate-400 align-middle">
         <p>
           Design inspired by{' '}
-          <a href="https://brittanychiang.com/" className="text-gray-300">
+          <a href="https://brittanychiang.com/" className="text-slate-300">
             Brittany Chiang
           </a>
           . Developed by{' '}
-          <a href="https://github.com/waqarkalim" className="text-gray-300">
+          <a href="https://github.com/waqarkalim" className="text-slate-300">
             Waqar Bin Kalim
           </a>
           .
