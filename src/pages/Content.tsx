@@ -18,10 +18,15 @@ const Content = () => {
       </main>
       <footer className="flex justify-center gap-1 p-2 text-gray-500 align-middle">
         <p>
-          Developed by{' '}
+          Design inspired by{' '}
+          <a href="https://brittanychiang.com/" className="text-gray-300">
+            Brittany Chiang
+          </a>
+          . Developed by{' '}
           <a href="https://github.com/waqarkalim" className="text-gray-300">
             Waqar Bin Kalim
           </a>
+          .
         </p>
       </footer>
     </div>
