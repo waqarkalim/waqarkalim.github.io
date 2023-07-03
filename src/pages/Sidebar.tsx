@@ -29,13 +29,13 @@ const Sidebar = () => {
       className="flex flex-col justify-center flex-grow gap-8 px-6 py-12 flex-start sm:px-12 sm:py-20 lg:w-1/2 lg:max-h-screen lg:justify-between lg:px-0 lg:py-24 lg:pl-24 lg:sticky lg:top-0 xl:w-1/4"
     >
       <div className="flex flex-col gap-4">
-        <h1 className="text-4xl font-bold text-slate-100 sm:text-5xl">
+        <h1 className="text-4xl font-bold heading-text sm:text-5xl">
           Waqar Bin Kalim
         </h1>
-        <h2 className="text-xl font-normal text-slate-200">
+        <h2 className="text-xl font-normal subheading-text">
           Associate Software Engineer
         </h2>
-        <p className="text-slate-400">
+        <p className="subtitle-text">
           I enjoy building useful, accessible, and impactful projects
         </p>
         <nav className="hidden lg:flex lg:py-12" aria-label="site map">

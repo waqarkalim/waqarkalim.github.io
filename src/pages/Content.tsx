@@ -16,14 +16,14 @@ const Content = () => {
         <Writing />
         <Research />
       </main>
-      <footer className="flex justify-center gap-1 p-2 text-slate-400 align-middle">
+      <footer className="flex justify-center gap-1 p-2 subtitle-text align-middle">
         <p>
           Design inspired by{' '}
-          <a href="https://brittanychiang.com/" className="text-slate-300">
+          <a href="https://brittanychiang.com/" className="accent-text">
             Brittany Chiang
           </a>
           . Developed by{' '}
-          <a href="https://github.com/waqarkalim" className="text-slate-300">
+          <a href="https://github.com/waqarkalim" className="accent-text">
             Waqar Bin Kalim
           </a>
           .

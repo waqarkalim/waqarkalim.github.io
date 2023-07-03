@@ -11,3 +11,23 @@ html {
   font-family: 'Inter-Regular';
   src: url('/src/assets/Inter/static/Inter-Regular.ttf') format('truetype');
 }
+
+.accent-text {
+  @apply text-slate-300;
+}
+
+.accent-bg {
+  @apply bg-slate-300;
+}
+
+.subtitle-text {
+  @apply text-slate-400;
+}
+
+.subheading-text {
+  @apply text-slate-200;
+}
+
+.heading-text {
+  @apply text-slate-100;
+}
