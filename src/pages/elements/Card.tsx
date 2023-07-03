@@ -1,7 +1,7 @@
 import useWindowSize from '../../hooks/useWindowSize'
 
 import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from './../../../tailwind.config.js'
+import tailwindConfig from './../../../tailwind.config.ts'
 
 import Tag from './Tag'
 interface CardProps<T extends 'experience' | 'project'> {
@@ -30,10 +30,10 @@ const Card = ({
   tags,
 }: CardProps<'experience' | 'project'>) => {
   const size = useWindowSize()
-  const fullConfig = resolveConfig(tailwindConfig)
+  const fullConfig = resolveConfig(tailwindConfig) as any
 
   const isLaptopOrGreater =
-    size[0] > +fullConfig.theme.screens.md.replaceAll('px', '')
+    size[0] > Number(fullConfig.theme.screens.md.replaceAll('px', ''))
 
   if (isLaptopOrGreater) {
     return (
