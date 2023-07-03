@@ -56,18 +56,21 @@ const Sidebar = () => {
       </div>
       <nav aria-label="social links">
         <ul className="flex gap-4">
-          <li aria-label="github">
-            <a href="https://github.com/waqarkalim">
+          <li>
+            <a href="https://github.com/waqarkalim" aria-label="github">
               <GithubIcon width={size} height={size} />
             </a>
           </li>
-          <li aria-label="linked in">
-            <a href="https://www.linkedin.com/in/waqar-kalim/">
+          <li>
+            <a
+              href="https://www.linkedin.com/in/waqar-kalim/"
+              aria-label="linked in"
+            >
               <LinkedInIcon width={size} height={size} />
             </a>
           </li>
-          <li aria-label="twitter">
-            <a href="https://twitter.com/waqar_kalim">
+          <li>
+            <a href="https://twitter.com/waqar_kalim" aria-label="twitter">
               <TwitterIcon width={size} height={size} />
             </a>
           </li>
