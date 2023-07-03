@@ -1,7 +1,7 @@
 @import './../index.scss';
 
 .section {
-  @apply flex flex-col gap-4 target:rounded-lg target:bg-slate-500 target:bg-opacity-10 lg:p-5;
+  @apply flex flex-col gap-4 lg:p-5 lg:target:rounded-lg lg:target:bg-slate-500 lg:target:bg-opacity-10;
 }
 
 .section__heading {
