@@ -1,8 +1,4 @@
-import useWindowSize from '../../hooks/useWindowSize'
-
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from './../../../tailwind.config.ts'
-
+import useIsLaptopOrGreater from '../../hooks/useIsLaptopOrGreater'
 import Tag from './Tag'
 
 interface CardProps<T extends 'experience' | 'project'> {
@@ -13,6 +9,7 @@ interface CardProps<T extends 'experience' | 'project'> {
   description: string
   tags: string[]
   position?: T extends 'experience' ? string : never
+  companyName?: T extends 'experience' ? string : never
   projectName?: T extends 'project' ? string : never
   eventName?: T extends 'project' ? string : never
   winner?: T extends 'project' ? boolean : never
@@ -26,11 +23,7 @@ interface LinkProps {
 }
 
 const Article = ({ id, href, className, children }: LinkProps) => {
-  const size = useWindowSize()
-  const fullConfig = resolveConfig(tailwindConfig) as any
-
-  const isLaptopOrGreater =
-    size[0] > Number(fullConfig.theme.screens.md.replaceAll('px', ''))
+  const isLaptopOrGreater = useIsLaptopOrGreater()
 
   return isLaptopOrGreater ? (
     <a id={id} href={href} className={`${className || ''}`}>
@@ -44,21 +37,15 @@ const Article = ({ id, href, className, children }: LinkProps) => {
 }
 
 const Link = ({ href, className, children }: Omit<LinkProps, 'id'>) => {
-  const size = useWindowSize()
-  const fullConfig = resolveConfig(tailwindConfig) as any
+  const isLaptopOrGreater = useIsLaptopOrGreater()
 
-  const isLaptopOrGreater =
-    size[0] > Number(fullConfig.theme.screens.md.replaceAll('px', ''))
-
-  if (isLaptopOrGreater) {
-    return <p className={`${className || ''}`}>{children}</p>
-  } else {
-    return (
-      <a href={href} className={`${className || ''}`}>
-        {children}
-      </a>
-    )
-  }
+  return isLaptopOrGreater ? (
+    <p className={`${className || ''}`}>{children}</p>
+  ) : (
+    <a href={href} className={`${className || ''}`}>
+      {children}
+    </a>
+  )
 }
 
 const Card = ({
@@ -67,6 +54,7 @@ const Card = ({
   date,
   eventName,
   position,
+  companyName,
   websiteUrl,
   projectName,
   winner,
@@ -80,7 +68,9 @@ const Card = ({
     <div className="flex flex-col gap-2 sm:w-3/4">
       <Link href={websiteUrl}>
         {type === 'experience' ? (
-          position
+          <>
+            {position} - {companyName}
+          </>
         ) : (
           <>
             {projectName} - {type === 'project' ? eventName : ''}

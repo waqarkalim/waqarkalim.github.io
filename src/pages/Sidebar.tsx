@@ -34,10 +34,14 @@ const Sidebar = () => {
         <p className="text-gray-400">
           I enjoy building useful, accessible, and impactful projects
         </p>
-        <nav className="hidden lg:flex lg:py-4">
+        <nav className="hidden lg:flex lg:py-4" aria-label="site map">
           <ul className="flex flex-col justify-center gap-4 align-middle">
             {NAV_HEADER.map((header, index) => (
-              <li key={`${header}-${index}`} className="nav__listitem">
+              <li
+                key={`${header}-${index}`}
+                className="nav__listitem"
+                aria-label={`Go to the ${header} section`}
+              >
                 <a
                   href={`#${header}`}
                   className={`${activeLink === index ? 'active' : ''}`}
@@ -50,20 +54,25 @@ const Sidebar = () => {
           </ul>
         </nav>
       </div>
-      <div className="flex gap-4">
-        <a href="https://github.com/waqarkalim" aria-label="github">
-          <GithubIcon width={size} height={size} />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/waqar-kalim/"
-          aria-label="linked in"
-        >
-          <LinkedInIcon width={size} height={size} />
-        </a>
-        <a href="https://twitter.com/waqar_kalim" aria-label="twitter">
-          <TwitterIcon width={size} height={size} />
-        </a>
-      </div>
+      <nav aria-label="social links">
+        <ul className="flex gap-4">
+          <li aria-label="github">
+            <a href="https://github.com/waqarkalim">
+              <GithubIcon width={size} height={size} />
+            </a>
+          </li>
+          <li aria-label="linked in">
+            <a href="https://www.linkedin.com/in/waqar-kalim/">
+              <LinkedInIcon width={size} height={size} />
+            </a>
+          </li>
+          <li aria-label="twitter">
+            <a href="https://twitter.com/waqar_kalim">
+              <TwitterIcon width={size} height={size} />
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
   )
 }
