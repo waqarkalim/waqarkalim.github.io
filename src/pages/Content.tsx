@@ -4,16 +4,22 @@ import Experience from './Experience'
 import Projects from './Projects'
 import Research from './Research'
 import Writing from './Writing'
+import Divider from './elements/Divider'
 
 const Content = () => {
   return (
-    <div className="flex flex-grow flex-col gap-8 px-6 py-8 sm:gap-24 sm:px-12 sm:py-20 lg:w-1/2 lg:overflow-y-auto lg:px-0 lg:py-24 lg:pr-24 xl:w-1/4">
+    <div className="flex flex-grow flex-col gap-8 px-6 py-8 sm:gap-24 sm:px-12 sm:py-20 lg:w-1/2 lg:overflow-y-auto lg:px-0 lg:py-24 lg:pr-20 xl:w-1/4">
       <main className="flex flex-col gap-8 sm:gap-24">
         <About />
+        <Divider />
         <Education />
+        <Divider />
         <Experience />
+        <Divider />
         <Projects />
+        <Divider />
         <Writing />
+        <Divider />
         <Research />
       </main>
       <footer className="subtitle-text flex justify-center gap-1 p-2 align-middle">
