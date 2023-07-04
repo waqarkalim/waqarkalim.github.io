@@ -18,13 +18,26 @@ const Content = () => {
       </main>
       <footer className="subtitle-text flex justify-center gap-1 p-2 align-middle">
         <p>
-          Design inspired by{' '}
-          <a href="https://brittanychiang.com/" className="accent-text">
+          Developed by{' '}
+          <a href="https://github.com/waqarkalim" className="footer__link">
+            {' '}
+            Waqar Bin Kalim
+          </a>
+          , and design inspired by{' '}
+          <a href="https://brittanychiang.com/" className="footer__link">
             Brittany Chiang
           </a>
-          . Developed by{' '}
-          <a href="https://github.com/waqarkalim" className="accent-text">
-            Waqar Bin Kalim
+          . Built with{' '}
+          <a href="https:///react.dev/" className="footer__link">
+            React
+          </a>{' '}
+          and{' '}
+          <a href="https://tailwindcss.com/" className="footer__link">
+            TailwindCSS
+          </a>
+          , and deployed with{' '}
+          <a href="https://pages.github.com/" className="footer__link">
+            GitHub Pages
           </a>
           .
         </p>

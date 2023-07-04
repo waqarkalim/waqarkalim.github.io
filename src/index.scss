@@ -35,3 +35,7 @@ html {
 .heading-text {
   @apply text-slate-100;
 }
+
+.footer__link {
+  @apply text-slate-300 lg:hover:text-slate-200;
+}
