@@ -1,4 +1,5 @@
 import { ProjectCard } from './elements/Card'
+import Divider from './elements/Divider'
 import './styles.scss'
 
 const ViewProjectsAnchorLink = () => (
@@ -33,6 +34,7 @@ const Projects = () => (
           'CockroachDB',
         ]}
       />
+      <Divider />
       <ProjectCard
         id="mood-for-thought"
         type="project"
@@ -45,6 +47,7 @@ const Projects = () => (
         description="Worked with a group of 4 people to develop a journaling application"
         tags={['JavaScript', 'React', 'Node.js', 'Express', 'MySQL']}
       />
+      <Divider />
       <ViewProjectsAnchorLink />
     </div>
   </section>

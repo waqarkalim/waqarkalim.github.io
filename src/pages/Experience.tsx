@@ -1,4 +1,5 @@
 import { ExperienceCard } from './elements/Card'
+import Divider from './elements/Divider'
 import './styles.scss'
 
 const ViewResumeAnchorLink = () => (
@@ -22,6 +23,7 @@ const Experience = () => (
         description="Made an impact by improving consumer-facing applications using Typescript, React, and Java, resulting in better KPIs. Also, worked on internal tools which made business logic updates faster to implement. These contributions have optimized processes, improved the user experience, and overall improved KPIs."
         tags={['TypeScript', 'React', 'Java', 'Git', 'GitLab', 'AWS']}
       />
+      <Divider />
       <ExperienceCard
         id="big-blue-bubble"
         type="experience"
@@ -33,6 +35,7 @@ const Experience = () => (
         description="Made an impact by analyzing data using SQL and Redshift, providing valuable insights for informed decision-making. Also, worked on an internal React-based tool, streamlining content updates and improving the user experience. These contributions optimized processes and facilitated data-driven decision-making."
         tags={['JavaScript', 'Java', 'Python', 'SQL', 'Docker', 'AWS']}
       />
+      <Divider />
       <ViewResumeAnchorLink />
     </div>
   </section>
