@@ -24,7 +24,7 @@ const Sidebar = () => {
   return (
     <header
       id="sidebar"
-      className="flex-start flex flex-grow flex-col justify-center gap-8 px-6 py-12 sm:px-12 sm:py-20 lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:justify-between lg:px-0 lg:py-24 lg:pl-24 xl:w-1/4"
+      className="flex-start flex flex-grow flex-col justify-center gap-8 px-6 py-12 sm:px-12 sm:py-20 lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:justify-between lg:px-0 lg:py-24 lg:pl-20 xl:w-1/4"
     >
       <div className="flex flex-col gap-4">
         <h1 className="heading-text text-4xl font-bold sm:text-5xl">

@@ -103,7 +103,7 @@ const CardContainer = ({
   <Article
     id={id}
     href={websiteUrl}
-    className="card section sm:flex-row"
+    className="card sm:flex-row"
     ariaLabel={ariaLabel}
   >
     <p className="date flex w-full flex-grow flex-row gap-1 sm:flex-col md:w-1/3">
@@ -120,9 +120,9 @@ const ExperienceCard = (props: IExperienceCard) => (
     date={props.date}
     ariaLabel={props.ariaLabel}
   >
-    <Link
-      href={props.websiteUrl}
-    >{`${props.position} - ${props.companyName}`}</Link>
+    <Link href={props.websiteUrl}>
+      {props.position} &middot; {props.companyName}
+    </Link>
     <p className="description__text">{props.description}</p>
     <div className="tag__list">
       {props.tags.map((tag, index) => (
@@ -139,12 +139,12 @@ const EducationCard = (props: IEducationCard) => (
     date={props.date}
     ariaLabel={props.ariaLabel}
   >
-    <Link
-      href={props.websiteUrl}
-    >{`${props.universityName} - ${props.programName}`}</Link>
-    <p className="subtitle-text">{`GPA: ${props.gpa} / 4.0`}</p>
-    <p className="subtitle-text">{props.achievementText}</p>
-    <p className="subtitle-text">{props.description}</p>
+    <Link href={props.websiteUrl}>
+      {props.universityName} &middot; {props.programName}
+    </Link>
+    <p className="description__text">{`GPA: ${props.gpa} / 4.0`}</p>
+    <p className="description__text">{props.achievementText}</p>
+    <p className="description__text">{props.description}</p>
   </CardContainer>
 )
 
@@ -156,7 +156,7 @@ const ProjectCard = (props: IProjectCard) => (
     ariaLabel={props.ariaLabel}
   >
     <Link href={props.websiteUrl}>
-      {props.projectName} - {props.eventName}
+      {props.projectName} &middot; {props.eventName}
       {props.winner ? <span>🥇</span> : <></>}
     </Link>
     <p className="description__text">{props.description}</p>
