@@ -28,7 +28,7 @@ const Sidebar = () => {
     >
       <div className="flex flex-col gap-4">
         <h1 className="heading-text text-4xl font-bold sm:text-5xl">
-          Waqaar Bin Kalim
+          Waqar Bin Kalim
         </h1>
         <h2 className="subheading-text text-xl font-normal">
           Associate Software Engineer
