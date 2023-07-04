@@ -11,7 +11,7 @@
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "pnpm run build",
-    "deploy": "npm run add-domain && gh-pages -d dist"
+    "deploy": "pnpm run add-domain && gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
