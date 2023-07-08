@@ -3,6 +3,8 @@ import GithubIcon from './icons/Github'
 import LinkedInIcon from './icons/LinkedIn'
 import TwitterIcon from './icons/Twitter'
 
+import { name, position, initialIntro } from '../constants'
+
 const NAV_HEADER = [
   'about',
   'education',
@@ -27,15 +29,9 @@ const Sidebar = () => {
       className="flex-start flex flex-grow flex-col justify-center gap-8 px-6 py-12 sm:px-12 sm:py-20 lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:justify-between lg:px-0 lg:py-24 lg:pl-20 xl:w-1/4"
     >
       <div className="flex flex-col gap-4">
-        <h1 className="heading-text text-4xl font-bold sm:text-5xl">
-          Waqaar Bin Kalim
-        </h1>
-        <h2 className="subheading-text text-xl font-normal">
-          Associate Software Engineer
-        </h2>
-        <p className="subtitle-text">
-          I enjoy building useful, accessible, and impactful projects
-        </p>
+        <h1 className="heading-text text-4xl font-bold sm:text-5xl">{name}</h1>
+        <h2 className="subheading-text text-xl font-normal">{position}</h2>
+        <p className="subtitle-text">{initialIntro}</p>
         <nav className="hidden lg:flex lg:py-12" aria-label="site map">
           <ul className="flex flex-col justify-center gap-4 align-middle">
             {NAV_HEADER.map((header, index) => (
