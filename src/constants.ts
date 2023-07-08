@@ -1,5 +1,5 @@
 const info: Record<string, string> = {
-  name: 'Waqaar Bin Kalim',
+  name: 'Waqar Bin Kalim',
   position: 'Associate Software Engineer',
   initialIntro: 'I enjoy building useful, accessible, and impactful projects',
 }
