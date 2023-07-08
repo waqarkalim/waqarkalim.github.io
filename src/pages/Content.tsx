@@ -12,9 +12,9 @@ const Content = () => {
       <main className="flex flex-col gap-8 sm:gap-24">
         <About />
         <Divider />
-        <Education />
-        <Divider />
         <Experience />
+        <Divider />
+        <Education />
         <Divider />
         <Projects />
         <Divider />

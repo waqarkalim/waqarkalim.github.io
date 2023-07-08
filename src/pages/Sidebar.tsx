@@ -7,8 +7,8 @@ import { name, position, initialIntro } from '../constants'
 
 const NAV_HEADER = [
   'about',
-  'education',
   'experience',
+  'education',
   'projects',
   'writing',
   'research',
