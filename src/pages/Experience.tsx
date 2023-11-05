@@ -5,7 +5,7 @@ import './styles.scss'
 const ViewResumeAnchorLink = () => (
   <a
     className="text-base hover:underline"
-    href="https://docs.google.com/document/d/1JDwBX8RYX0v4Es-cjT9fuuuhlkt2l5LIO737vuLvZWI/edit?usp=sharing"
+    href="https://docs.google.com/document/d/1mmifju4UaGWb8G7bzLc3OALdwOQs_wm-ZaHk3Ysd6kk/edit?usp=sharing"
     target="_blank"
   >
     View Resume 🔗
